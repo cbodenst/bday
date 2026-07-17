@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <!-- Bunter Hintergrund -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a0845" />
+      <stop offset="100%" stop-color="#6441A5" />
+    </linearGradient>
+    
+    <!-- Glüheffekt für das Atom -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Hintergrund (Tieferes Lila für besseren Kontrast) -->
+  <rect width="300" height="300" fill="url(#bg)" />
+  
+  <!-- DEUTLICHES Quanten-Atom im Hintergrund -->
+  <g filter="url(#glow)">
+    <!-- Atomkern -->
+    <circle cx="150" cy="120" r="20" fill="#00ffff" opacity="0.8" />
+    
+    <!-- Umlaufbahnen (viel dicker und leuchtend) -->
+    <ellipse cx="150" cy="120" rx="130" ry="35" fill="none" stroke="#00ffff" stroke-width="8" transform="rotate(30 150 120)" opacity="0.7" />
+    <ellipse cx="150" cy="120" rx="130" ry="35" fill="none" stroke="#ff00ff" stroke-width="8" transform="rotate(90 150 120)" opacity="0.7" />
+    <ellipse cx="150" cy="120" rx="130" ry="35" fill="none" stroke="#ffff00" stroke-width="8" transform="rotate(150 150 120)" opacity="0.7" />
+    
+    <!-- Elektronen auf den Bahnen (als Puzzel-Hilfe) -->
+    <circle cx="270" cy="180" r="12" fill="#00ffff" />
+    <circle cx="150" cy="245" r="12" fill="#ff00ff" />
+    <circle cx="30" cy="180" r="12" fill="#ffff00" />
+  </g>
+  
+  <!-- Der Karton (Körper - etwas tiefer gesetzt) -->
+  <g transform="translate(0, 20)">
+    <!-- Innere Dunkelheit des Kartons -->
+    <polygon points="60,180 240,180 210,150 90,150" fill="#2d1b11" />
+    
+    <!-- Katze (Viel niedlicher und symmetrischer in der Box) -->
+    <g transform="translate(150, 150)">
+      <!-- Lebendige Seite (Links - Orange) -->
+      <!-- Schwanz -->
+      <path d="M -50,10 C -80,10 -80,-30 -60,-40" fill="none" stroke="#FF8C00" stroke-width="12" stroke-linecap="round" />
+      <!-- Körper -->
+      <path d="M 0,30 C -40,30 -50,-10 -50,-40 C -50,-60 -30,-80 0,-80 Z" fill="#FF8C00" />
+      <!-- Ohr -->
+      <polygon points="-15,-75 -45,-105 -45,-60" fill="#FF8C00" />
+      <!-- Innenohr -->
+      <polygon points="-20,-75 -35,-90 -35,-65" fill="#FFC0CB" />
+      <!-- Auge -->
+      <ellipse cx="-20" cy="-45" rx="12" ry="15" fill="#FFF" />
+      <circle cx="-18" cy="-45" r="5" fill="#000" />
+      <circle cx="-15" cy="-48" r="2" fill="#FFF" /> <!-- Lichtreflex -->
+      <!-- Nase (halbiert) -->
+      <path d="M 0,-30 L -8,-35 L 0,-35 Z" fill="#FFC0CB" />
+      <!-- Schnurrhaare -->
+      <line x1="-15" y1="-30" x2="-40" y2="-25" stroke="#FFF" stroke-width="2" stroke-linecap="round" />
+      <line x1="-15" y1="-25" x2="-40" y2="-15" stroke="#FFF" stroke-width="2" stroke-linecap="round" />
+      
+      <!-- Untote/Geister-Seite (Rechts - Helles Cyan/Türkis für Kontrast) -->
+      <!-- Schwanz -->
+      <path d="M 50,10 C 80,10 80,-30 60,-40" fill="none" stroke="#00ced1" stroke-width="12" stroke-linecap="round" stroke-dasharray="8,4" />
+      <!-- Körper -->
+      <path d="M 0,30 C 40,30 50,-10 50,-40 C 50,-60 30,-80 0,-80 Z" fill="#00ced1" opacity="0.8" />
+      <!-- Ohr -->
+      <polygon points="15,-75 45,-105 45,-60" fill="#00ced1" opacity="0.8" />
+      <!-- Auge (Das berühmte X) -->
+      <g transform="translate(20, -45)">
+        <line x1="-10" y1="-10" x2="10" y2="10" stroke="#FFF" stroke-width="4" stroke-linecap="round" />
+        <line x1="10" y1="-10" x2="-10" y2="10" stroke="#FFF" stroke-width="4" stroke-linecap="round" />
+      </g>
+      <!-- Knochen/Skelett-Andeutung -->
+      <path d="M 15,-10 L 35,-10 M 20,5 L 40,5 M 25,20 L 45,20" stroke="#FFF" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+    </g>
+
+    <!-- Karton Vorderseite & Seiten -->
+    <polygon points="60,180 240,180 200,260 100,260" fill="#8B4513" />
+    <polygon points="60,180 100,260 90,150" fill="#A0522D" />
+    <polygon points="240,180 200,260 210,150" fill="#A0522D" />
+    
+    <!-- Kartonklappen (helfen enorm als Orientierung links/rechts) -->
+    <polygon points="60,180 10,90 90,150" fill="#CD853F" />
+    <polygon points="240,180 290,90 210,150" fill="#CD853F" />
+    
+    <!-- Warnschild (Mittig unten) -->
+    <g transform="translate(150, 220)">
+      <!-- Gelbes Dreieck -->
+      <polygon points="0,-25 25,20 -25,20" fill="#FFD700" stroke="#000" stroke-width="2" />
+      <!-- Radioaktiv-Symbol im Dreieck -->
+      <circle cx="0" cy="5" r="4" fill="#000" />
+      <path d="M 0,5 L -6,-1 A 8,8 0 0 1 6,-1 Z" fill="#000" />
+      <path d="M 0,5 L 6,11 A 8,8 0 0 1 0,13 Z" fill="#000" />
+      <path d="M 0,5 L -6,11 A 8,8 0 0 0 0,13 Z" fill="#000" />
+    </g>
+  </g>
+</svg>

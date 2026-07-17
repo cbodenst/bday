@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Geschenk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Start -->
+        <div id="step-0" class="step active">
+            <h1>Hallo! 👋</h1>
+            <p>Jemand hat ein Geschenk für dich hinterlegt.</p>
+            <p>Um es zu öffnen, musst du aber erst beweisen, dass du es verdient hast.</p>
+            <button onclick="nextStep(1)">Rätsel starten</button>
+        </div>
+
+        <!-- Rätsel 1 -->
+        <div id="step-1" class="step">
+            <h2>Frage 1</h2>
+            <p>Welche promovierte Chemikerin räumt im Fernsehen und auf YouTube mit Mythen auf?</p>
+            <button class="choice" onclick="wrongAnswer(this)">Marie Curie</button>
+            <button class="choice" onclick="nextStep(2)">Mai Thi Nguyen-Kim</button>
+            <button class="choice" onclick="wrongAnswer(this)">Angela Merkel</button>
+        </div>
+
+        <!-- Rätsel 2 -->
+        <div id="step-2" class="step">
+            <h2>Frage 2</h2>
+            <p>Wofür steht das 'X' in der Wissenschaft häufig?</p>
+            <button class="choice" onclick="wrongAnswer(this)">Ein Xylophon</button>
+            <button class="choice" onclick="wrongAnswer(this)">Die römische 10</button>
+            <button class="choice" onclick="nextStep(3)">Das Unbekannte</button>
+        </div>
+
+        <!-- Rätsel 3: Schiebepuzzle -->
+        <div id="step-3" class="step">
+            <h2>Letzte Hürde!</h2>
+            <p>Löse das Schieberätsel.</p>
+            <div id="puzzle-board"></div>
+        </div>
+
+        <!-- Auflösung -->
+        <div id="step-4" class="step reveal">
+            <h1>🎉 Geschafft! 🎉</h1>
+            <p>Dein Geschenk:</p>
+            <div class="ticket">
+                <span class="label">2 TICKETS FÜR</span>
+                <h2>MAI THINK X</h2>
+                <span class="label">Die Show</span>
+            </div>
+            <p>Ich freue mich darauf!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

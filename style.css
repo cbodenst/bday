@@ -1,0 +1,155 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --primary: #bb86fc;
+    --primary-hover: #9e67e0;
+    --error: #cf6679;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+#app {
+    width: 100%;
+    max-width: 400px;
+}
+
+.step {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.step.active {
+    display: block;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+button {
+    width: 100%;
+    background-color: var(--primary);
+    color: #000;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button.error {
+    background-color: var(--error);
+    color: #fff;
+}
+
+.ticket {
+    background: linear-gradient(135deg, #bb86fc, #3700b3);
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
+    color: white;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.ticket h2 {
+    font-size: 32px;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.ticket .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 30px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.tile {
+    background-color: var(--primary);
+    
+    /* Farbenfrohe Schrödinger-Katze lokal als Bild geladen */
+    background-image: url('cat.svg');
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
+    
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.1s;
+    box-shadow: 0 4px 0 var(--primary-hover);
+}
+
+.letter-shadow {
+    /* Mache die Buchstaben über jedem Hintergrund lesbar */
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.9), 
+        -2px -2px 4px rgba(0,0,0,0.9), 
+        2px -2px 4px rgba(0,0,0,0.9), 
+        -2px 2px 4px rgba(0,0,0,0.9);
+}
+
+.tile:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--primary-hover);
+}
+
+.tile.empty {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    cursor: default;
+}
