@@ -177,3 +177,11 @@ button.error {
 .digit-roller:active {
     transform: scale(0.95);
 }
+
+/* --- Leeres Puzzleteil (Fix) --- */
+.tile.empty {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-image: none !important;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.7) !important;
+    cursor: default;
+}
