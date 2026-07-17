@@ -18,6 +18,22 @@ function wrongAnswer(btn) {
     }, 1500);
 }
 
+// --- Zahlenschloss Logik ---
+let lockCode = [0, 0, 0];
+
+function rollDigit(idx) {
+    lockCode[idx - 1] = (lockCode[idx - 1] + 1) % 10;
+    document.getElementById(`digit-${idx}`).innerText = lockCode[idx - 1];
+}
+
+function checkLock(btn) {
+    if (lockCode.join('') === '873') {
+        nextStep(3);
+    } else {
+        wrongAnswer(btn);
+    }
+}
+
 // --- Schiebepuzzle Logik ---
 const targetState = [
     { id: 0, letter: 'M' },

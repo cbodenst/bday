@@ -147,9 +147,33 @@ button.error {
     box-shadow: 0 0 0 var(--primary-hover);
 }
 
-.tile.empty {
-    background-color: transparent;
-    background-image: none;
-    box-shadow: none;
-    cursor: default;
+/* --- Zahlenschloss --- */
+.lock-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.digit-roller {
+    background: linear-gradient(180deg, #333 0%, #1a1a1a 40%, #1a1a1a 60%, #333 100%);
+    color: #fff;
+    width: 60px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #555;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255,255,255,0.1);
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.1s;
+}
+
+.digit-roller:active {
+    transform: scale(0.95);
 }

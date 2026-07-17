@@ -25,13 +25,23 @@
             <button class="choice" onclick="wrongAnswer(this)">Angela Merkel</button>
         </div>
 
-        <!-- Rätsel 2 -->
+        <!-- Rätsel 2: Zahlenschloss -->
         <div id="step-2" class="step">
-            <h2>Frage 2</h2>
-            <p>Wofür steht das 'X' in der Wissenschaft häufig?</p>
-            <button class="choice" onclick="wrongAnswer(this)">Ein Xylophon</button>
-            <button class="choice" onclick="wrongAnswer(this)">Die römische 10</button>
-            <button class="choice" onclick="nextStep(3)">Das Unbekannte</button>
+            <h2>Der Labor-Tresor</h2>
+            <p>Knacke den Code mit diesen drei Hinweisen:</p>
+            <ol style="text-align: left; margin: 0 0 20px 20px; font-size: 14px; line-height: 1.6;">
+                <li>Anzahl der Planeten im Sonnensystem</li>
+                <li>Der pH-Wert von neutralem Wasser</li>
+                <li>Anzahl der Atome in einem H₂O-Molekül</li>
+            </ol>
+            
+            <div class="lock-container">
+                <div class="digit-roller" id="digit-1" onclick="rollDigit(1)">0</div>
+                <div class="digit-roller" id="digit-2" onclick="rollDigit(2)">0</div>
+                <div class="digit-roller" id="digit-3" onclick="rollDigit(3)">0</div>
+            </div>
+            
+            <button class="choice" onclick="checkLock(this)">Tresor öffnen</button>
         </div>
 
         <!-- Rätsel 3: Schiebepuzzle -->
